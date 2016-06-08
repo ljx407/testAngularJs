@@ -8,7 +8,7 @@
 	</parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>testJsEngine</artifactId>
+	<artifactId>testAngularJs</artifactId>
 	<packaging>war</packaging>
 	<name>testAngularjs Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -25,7 +25,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>testJsEngine</finalName>
+		<finalName>testAngularJs</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
