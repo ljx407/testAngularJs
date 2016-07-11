@@ -20,6 +20,13 @@ myApp.controller('scotchController', function($scope) {
     
 });
 
+myApp.filter('testFilter',function(){
+	return function(input){
+		console.info(input);
+		return input + "!";
+	}
+});
+
 myApp.config(function($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/home');
