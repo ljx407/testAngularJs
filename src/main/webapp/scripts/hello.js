@@ -3,6 +3,7 @@ var myApp = angular.module("myApp", [ 'ui.router' ]);
 myApp.controller('scotchController', function($scope) {
     
     $scope.message = 'test';
+    $scope.testNub = true ;
     $scope.scotches = [
         {
             name: 'Macallan 12',
@@ -41,6 +42,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'views/partial-home-list.html',
 		controller : function($scope) {
 			$scope.dogs = [ 'Bernese', 'Husky', 'Goldendoodle' ];
+			$scope.testNub = 7 ;
 		}
 	})
 	.state('home.paragraph', {
