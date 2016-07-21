@@ -1,68 +1,37 @@
 var myApp = angular.module("myApp", [ 'ui.router' ]);
 
-myApp.controller('scotchController', function($scope) {
-    
-    $scope.message = 'test';
-    $scope.testNub = true ;
-    $scope.scotches = [
-        {
-            name: 'Macallan 12',
-            price: 50
-        },
-        {
-            name: 'Chivas Regal Royal Salute',
-            price: 10000
-        },
-        {
-            name: 'Glenfiddich 1937',
-            price: 20000
-        }
-    ];
-    
-});
-
-myApp.filter('testFilter',function(){
-	return function(input){
-		console.info(input);
-		return input + "!";
-	}
-});
-
 myApp.config(function($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/home');
 
-	$stateProvider
-	.state('home', {
+	$stateProvider.state('home', {
 		url : '/home',
 		templateUrl : 'views/partial-home.html'
-	})
-	.state('home.list', {
+	}).state('home.list', {
 		url : '/list',
 		templateUrl : 'views/partial-home-list.html',
-		controller : function($scope) {
-			$scope.dogs = [ 'Bernese', 'Husky', 'Goldendoodle' ];
-			$scope.testNub = 7 ;
-		}
-	})
-	.state('home.paragraph', {
+		controller : 'partialHomeListController'
+	}).state('home.paragraph', {
 		url : '/paragraph',
 		template : 'I could sure use a drink right now.'
-	})
-	.state('about',{
+	}).state('about', {
 		url : '/about',
-        views: {
-            '': { 
-            	templateUrl: 'views/partial-about.html' 
-            },
-            'columnOne@about': { 
-            	template: 'Look I am a column!'
-            },
-            'columnTwo@about': { 
-                templateUrl: 'views/table-data.html',
-                controller: 'scotchController'
-            }
-        }	
-	})
+		views : {
+			'' : {
+				templateUrl : 'views/partial-about.html'
+			},
+			'columnOne@about' : {
+				template : 'Look I am a column!'
+			},
+			'columnTwo@about' : {
+				templateUrl : 'views/table-data.html',
+				controller : 'scotchController'
+			}
+		}
+	}).state('testSelect',{
+		url : '/testSelect',
+		templateUrl : 'views/test-select.html',
+		controller : 'testSelectController'
+	});
 
 });
