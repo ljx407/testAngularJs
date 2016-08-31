@@ -1,0 +1,18 @@
+<h2>{{title}}</h2>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Go to detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.surname}}</td>
+            <td><button class="btn" ng-click="open(contact.id)" >Detail</button></td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-primary" >Add New Contact</a>

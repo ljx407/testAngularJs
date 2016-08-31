@@ -32,6 +32,11 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		url : '/testSelect',
 		templateUrl : 'views/test-select.html',
 		controller : 'testSelectController'
+	})
+	.state('testModal',{
+		url : '/testModal',
+		templateUrl : 'views/testmodal/test-modal.html',
+		controller : 'testModalController'
 	});
 
 });
